@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2023 a las 21:00:54
+-- Tiempo de generación: 06-11-2023 a las 22:17:36
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -31,6 +31,14 @@ CREATE TABLE `rol` (
   `id_rol` int(2) NOT NULL,
   `nom_rol` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`id_rol`, `nom_rol`) VALUES
+(1, 'Administrador'),
+(2, 'Usuario');
 
 -- --------------------------------------------------------
 
@@ -60,6 +68,15 @@ CREATE TABLE `usuario` (
   `contraseña` varchar(101) NOT NULL,
   `FK_rol` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`correo`, `nombres`, `apellidos`, `contraseña`, `FK_rol`) VALUES
+('c@gmail.com', 'Cccc', 'Cccc', 'b59c67bf196a4758191e42f76670ceba', 2),
+('l@gmail.com', 'Llll', 'Llll', 'b59c67bf196a4758191e42f76670ceba', 2),
+('q@gmail.com', 'Qqqq', 'Qqqq', 'd41d8cd98f00b204e9800998ecf8427e', 2);
 
 --
 -- Índices para tablas volcadas
