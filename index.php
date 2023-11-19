@@ -15,7 +15,7 @@ if(isset($_SESSION['nu_id'])){
 
     <link rel="icon" type="image/jpg" href="img/favicon.png" />
 
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -109,22 +109,22 @@ if(isset($_SESSION['nu_id'])){
                     <div class="actual-form">
 
                         <div class="input-wrap">
-                            <input type="email" id="correo" name="correo"            minlength="4" class="input-field" autocomplete="off" required/>
+                            <input type="email" id="correo" name="correo" minlength="4" class="input-field" autocomplete="off" required/>
                             <label>Correo</label>
                         </div>
 
                         <div class="input-wrap">
-                            <input type="text" id="nombres" name="nombres"                    minlength="4" class="input-field" autocomplete="off" required/>
+                            <input type="text" id="nombres" name="nombres" minlength="4" class="input-field" autocomplete="off" required/>
                             <label>Nombres</label>
                         </div>
 
                         <div class="input-wrap">
-                            <input type="text" id="apellidos" name="apellidos"                   minlength="4" class="input-field" autocomplete="off" required/>
+                            <input type="text" id="apellidos" name="apellidos" minlength="4" class="input-field" autocomplete="off" required/>
                             <label>Apellidos</label>
                         </div>
 
                         <div class="input-wrap">
-                            <input type="password" id="password" name="password"  minlength="4" class="input-field" autocomplete="off" required/>
+                            <input type="password" id="password" name="password" minlength="4" class="input-field" autocomplete="off" required/>
                             <label>Contraseña</label>
                         </div>
 
