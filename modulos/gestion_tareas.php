@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Tareas</title>
-    <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="icon" type="image/jpg" href="../img/favicon.png" />
 
 </head>

@@ -12,7 +12,6 @@
    $estado = $_POST['estado'];
 
    $correo_usuario = isset($_SESSION['correo']) ? $_SESSION['correo'] : '';
-   echo "Correo del usuario: " . $correo_usuario;
 
    $registrar = mysqli_query($conexion,"INSERT INTO `tareas` (`nom_tarea`, `descipcion`, `fecha_fin`, `estado`, `FK_usuario`) VALUES ( '$nombre_tarea', '$descripcion', '$fecha_fin', '$estado', '$correo_usuario'); ");
 
