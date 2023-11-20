@@ -11,9 +11,9 @@ if(isset($_SESSION['nu_id'])){
 <head>
     <meta charset="UTF-8">
 
-    <title>Sign in & Sign in</title>
+    <title>Ingresar - To-Do</title>
 
-    <link rel="icon" type="image/jpg" href="img/favicon.png" />
+    <link rel="icon" type="image/png" href="/img/favicon.png">
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -99,6 +99,7 @@ if(isset($_SESSION['nu_id'])){
                             <h4>easyclass</h4>
                         </div>
 
+                        
                     <div class="heading">
                         <h2>Regístrate</h2>
                         <h6>¿Ya tienes una cuenta?</h6>

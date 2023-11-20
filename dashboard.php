@@ -9,8 +9,9 @@ if(!isset($_SESSION['correo'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="css/dashboard.css?mod=gestion_tareas">
-    
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" type="image/jpg" href="img/favicon.png" />
+
 
     <meta charset="UTF-8">
 
