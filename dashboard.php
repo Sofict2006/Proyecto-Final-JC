@@ -13,6 +13,8 @@ if(!isset($_SESSION['correo'])){
 
     <link rel="icon" type="image/png" href="img/favicon.png" />
 
+    <script src="https://kit.fontawesome.com/cd328211ff.js" crossorigin="anonymous"></script>
+
 
     <meta charset="UTF-8">
 
@@ -27,7 +29,7 @@ if(!isset($_SESSION['correo'])){
             <ul class="enlaces_menu">
                 <li><a href="dashboard.php?mod=inicio">Inicio</a></li>
                 <li><a href="dashboard.php?mod=gestion_tareas">Tareas</a></li>
-                <li><a href="dashboard.php?mod=inicio">Crear tareas</a></li>
+                <li><a href="dashboard.php?mod=crud_tarea">Crear tareas</a></li>
                 <li><a href="dashboard.php?mod=inicio">Contacto</a></li>
             </ul>
 
@@ -52,12 +54,8 @@ if(!isset($_SESSION['correo'])){
             require_once("modulos/inicio.php");
         }
         else
-        if (@ $_GET['mod']=="gestion_usuarios"){
-            require_once("modulos/gestion_usuarios.php");
-        }
-        else
-        if (@ $_GET['mod']=="crear_usuarios"){
-            require_once("modulos/crear_usuarios.php");
+        if (@ $_GET['mod']=="crud_tarea"){
+            require_once("modulos/crud_tarea.php");
         }
 
     ?>
