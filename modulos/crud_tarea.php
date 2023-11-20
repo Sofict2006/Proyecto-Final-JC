@@ -22,9 +22,6 @@ if (isset($_POST['btn_modificar'])){
 }
 if (isset($_POST['btn_actualizar_usuario'])){
   
-// Traemos la conexion
-include "conexion.php";
-
 // Traemos todos los datos del formulario
 $id_tarea = $_POST['id_tarea'];
 $nombre_tarea = $_POST['nombre_tarea'];
@@ -61,8 +58,10 @@ echo "<script>alert('Modificación Exitosa');</script>";
  
     <h4 class="card-title" style="text-align: center;">Gestión de Tareas</h4>
         <center> 
-            <p class="card-description"> ¡Hola, <?php echo $_SESSION['nombres'];?>! Aquí puedes gestionar los usuarios.</p> 
+            <p class="card-description"> ¡Hola, <?php echo $_SESSION['nombres'];?>! Aquí puedes gestionar las tareas.</p> 
         </center>
+
+        <!-- Tabla de Tareas Completadas -->
         <table class="table">
             <thead>
                 <tr>
@@ -77,61 +76,108 @@ echo "<script>alert('Modificación Exitosa');</script>";
                 </tr>
             </thead>
             <tbody>
-              
+
 <?php
+$dato = @$_POST['txtbuscar'];
+$consulta = mysqli_query($conexion, "SELECT * FROM tareas WHERE id_tarea LIKE '%$dato%';") or die(mysqli_error($conexion));
 
- //recibir el dato
- $dato = @$_POST['txtbuscar'];
+while ($fila = mysqli_fetch_array($consulta)) {
 
- // Consulta
- $consulta = mysqli_query($conexion,"SELECT * FROM tareas WHERE id_tarea LIKE '%$dato%';") or die ($conexion."Error en la consulta");
+if ($fila['estado'] == 1) {
 
-//Cantidad de datos encontrados
- $cantidad = mysqli_num_rows($consulta);
- if($cantidad > 0){
-
-  // Ciclo para recorrer los datos
- while($fila=mysqli_fetch_array($consulta)){
 ?>
 
                 <tr>
                     <td><?php echo $fila['FK_usuario']; ?></td>
-                    <td><?php echo $fila['id_tarea'];  ?></td>
+                    <td><?php echo $fila['id_tarea']; ?></td>
                     <td><?php echo $fila['nom_tarea']; ?></td>
                     <td><?php echo $fila['descipcion']; ?></td>
                     <td><?php echo $fila['fecha_fin']; ?></td>
                     <td><?php echo $fila['estado']; ?></td>
                     <td>
-
                         <form action="dashboard.php?mod=crud_tarea" method="post">
                             <input type="text" name="doc_modificar" value="<?php echo $fila['id_tarea']; ?>" hidden>
                             <button type="submit" name="btn_modificar" style="background-color: rgba(0, 0, 0, 0.0); border: 0px;">
                                 <i class="fa-solid fa-pen-to-square" style="color:#5783bc;"></i>
                             </button>
                         </form>
-
                     </td>
                     <td>
                         <form action="dashboard.php?mod=crud_tarea" method="post">
                             <input type="text" name="doc_eliminar" value="<?php echo $fila['id_tarea']; ?>" hidden>
                             <input type="text" name="fecha" value="<?php echo date('Y-m-d'); ?>" hidden>
-
                             <button type="submit" name="btn_eliminar" style="background-color: rgba(0, 0, 0, 0.0); border: 0px;">
                                 <i class="fa-solid fa-trash" style="color: #5783bc; margin-left: 1rem;"></i>
                             </button>
                         </form>
+                    </td>
+                </tr>
 
+<?php
+}
+}
+?>
+            </tbody>
+        </table>
+
+        <!-- Tabla de Tareas Pendientes -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Correo</th>
+                    <th>Id Tarea</th>
+                    <th>Nombre tarea</th>
+                    <th>Descripción</th>
+                    <th>Fecha fin</th>
+                    <th>Estado</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<?php
+// Reiniciar el puntero del resultado
+mysqli_data_seek($consulta, 0);
+
+while ($fila = mysqli_fetch_array($consulta)) {
+// Filtrar por estado (0: Pendiente)
+if ($fila['estado'] == 0) {
+?>
+
+                <tr>
+                    <td><?php echo $fila['FK_usuario']; ?></td>
+                    <td><?php echo $fila['id_tarea']; ?></td>
+                    <td><?php echo $fila['nom_tarea']; ?></td>
+                    <td><?php echo $fila['descipcion']; ?></td>
+                    <td><?php echo $fila['fecha_fin']; ?></td>
+                    <td><?php echo $fila['estado']; ?></td>
+                    <td>
+                        <form action="dashboard.php?mod=crud_tarea" method="post">
+                            <input type="text" name="doc_modificar" value="<?php echo $fila['id_tarea']; ?>" hidden>
+                            <button type="submit" name="btn_modificar" style="background-color: rgba(0, 0, 0, 0.0); border: 0px;">
+                                <i class="fa-solid fa-pen-to-square" style="color:#5783bc;"></i>
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="dashboard.php?mod=crud_tarea" method="post">
+                            <input type="text" name="doc_eliminar" value="<?php echo $fila['id_tarea']; ?>" hidden>
+                            <input type="text" name="fecha" value="<?php echo date('Y-m-d'); ?>" hidden>
+                            <button type="submit" name="btn_eliminar" style="background-color: rgba(0, 0, 0, 0.0); border: 0px;">
+                                <i class="fa-solid fa-trash" style="color: #5783bc; margin-left: 1rem;"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
 
 <?php
     }
-  }
 }
-  ?>
- 
+?>
             </tbody>
         </table>
+
 
 <?php
 if (isset($_POST['btn_modificar'])){
@@ -183,6 +229,8 @@ while($fila2=mysqli_fetch_array($consulta)){
 </form>
                          
 <?php
-}
+        }
+    }
 }
 ?>
+
