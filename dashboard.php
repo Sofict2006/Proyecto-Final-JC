@@ -10,7 +10,8 @@ if(!isset($_SESSION['correo'])){
 <html lang="es">
 <head>
     <link rel="stylesheet" href="css/dashboard.css">
-    <link rel="icon" type="image/jpg" href="img/favicon.png" />
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
 
 
     <meta charset="UTF-8">
@@ -21,7 +22,7 @@ if(!isset($_SESSION['correo'])){
     <header>
         <nav>
             <a href="#">
-                <img class="logo" src="logo-png" alt="">
+                <img class="logo" src="img/favicon.png" alt="">
             </a>
             <ul class="enlaces_menu">
                 <li><a href="dashboard.php?mod=inicio">Inicio</a></li>
