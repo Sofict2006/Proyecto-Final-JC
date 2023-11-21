@@ -27,10 +27,17 @@ if(!isset($_SESSION['correo'])){
                 <img class="logo" src="img/favicon.png" alt="">
             </a>
             <ul class="enlaces_menu">
+<<<<<<< HEAD
                 <li><a href="dashboard.php?mod=crud_tarea">Inicio</a></li>
                 <li><a href="dashboard.php?mod=crud_tarea">Gestionar Tareas</a></li>
                 <li><a href="dashboard.php?mod=gestion_tareas">Crear Tareas</a></li>
                 <li><a href="dashboard.php?mod=inicio">Perfil</a></li>
+=======
+                <li><a href="dashboard.php?mod=inicio">Inicio</a></li>
+                <li><a href="dashboard.php?mod=gestion_tareas">Tareas</a></li>
+                <li><a href="dashboard.php?mod=crud_tarea">Crear tareas</a></li>
+                <li><a href="dashboard.php?mod=inicio">Contacto</a></li>
+>>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
             </ul>
 
             <button class="hola" type="button">
