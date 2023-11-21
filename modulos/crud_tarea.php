@@ -22,12 +22,6 @@ if (isset($_POST['btn_modificar'])){
 }
 if (isset($_POST['btn_actualizar_usuario'])){
   
-<<<<<<< HEAD
-=======
-// Traemos la conexion
-include "conexion.php";
-
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
 // Traemos todos los datos del formulario
 $id_tarea = $_POST['id_tarea'];
 $nombre_tarea = $_POST['nombre_tarea'];
@@ -51,7 +45,6 @@ echo "<script>alert('Modificación Exitosa');</script>";
 ?>
 
 <br>
-<<<<<<< HEAD
 <br>
 
 
@@ -60,14 +53,6 @@ echo "<script>alert('Modificación Exitosa');</script>";
     <input type="text" class="form-control" placeholder="Buscar..." name="txtbuscar" style="width: 80%; height:40px;">
 
     <button type="submit" class="sign-btn" name="btn_registrar1" style="border-radius: 10px; width: 50px; margin-top: 8px; margin-left: -15px; height:40px;">Buscar</button>
-=======
-
-<form action="dashboard.php?mod=crud_tarea" method="post">
-
-    <input type="text" class="form-control" placeholder="Buscar..." name="txtbuscar" style="width: 50%;">
-
-    <button type="submit" class="btn" name="btn_registrar1" style="border-radius: 10px; width: 150px; margin-top: 8px;">Buscar</button>
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
 
 </form>
 
@@ -75,17 +60,12 @@ echo "<script>alert('Modificación Exitosa');</script>";
  
     <h4 class="card-title" style="text-align: center;">Gestión de Tareas</h4>
         <center> 
-<<<<<<< HEAD
             <p class="card-description"> ¡Hola, <?php echo $_SESSION['nombres'];?>! Aquí puedes gestionar las tareas.</p> 
         </center>
 
     <div class="table-container">
         
         <!-- Tabla de Tareas Completadas -->
-=======
-            <p class="card-description"> ¡Hola, <?php echo $_SESSION['nombres'];?>! Aquí puedes gestionar los usuarios.</p> 
-        </center>
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
         <table class="table">
             <thead>
                 <tr>
@@ -100,7 +80,6 @@ echo "<script>alert('Modificación Exitosa');</script>";
                 </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
 
 <?php
 $dato = @$_POST['txtbuscar'];
@@ -110,65 +89,31 @@ while ($fila = mysqli_fetch_array($consulta)) {
 
 if ($fila['estado'] == 1) {
 
-=======
-              
-<?php
-
- //recibir el dato
- $dato = @$_POST['txtbuscar'];
-
- // Consulta
- $consulta = mysqli_query($conexion,"SELECT * FROM tareas WHERE id_tarea LIKE '%$dato%';") or die ($conexion."Error en la consulta");
-
-//Cantidad de datos encontrados
- $cantidad = mysqli_num_rows($consulta);
- if($cantidad > 0){
-
-  // Ciclo para recorrer los datos
- while($fila=mysqli_fetch_array($consulta)){
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
 ?>
 
                 <tr>
                     <td><?php echo $fila['FK_usuario']; ?></td>
-<<<<<<< HEAD
                     <td><?php echo $fila['id_tarea']; ?></td>
-=======
-                    <td><?php echo $fila['id_tarea'];  ?></td>
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
                     <td><?php echo $fila['nom_tarea']; ?></td>
                     <td><?php echo $fila['descipcion']; ?></td>
                     <td><?php echo $fila['fecha_fin']; ?></td>
                     <td><?php echo $fila['estado']; ?></td>
                     <td>
-<<<<<<< HEAD
-=======
-
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
                         <form action="dashboard.php?mod=crud_tarea" method="post">
                             <input type="text" name="doc_modificar" value="<?php echo $fila['id_tarea']; ?>" hidden>
                             <button type="submit" name="btn_modificar" style="background-color: rgba(0, 0, 0, 0.0); border: 0px;">
                                 <i class="fa-solid fa-pen-to-square" style="color:#5783bc;"></i>
                             </button>
                         </form>
-<<<<<<< HEAD
-=======
-
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
                     </td>
                     <td>
                         <form action="dashboard.php?mod=crud_tarea" method="post">
                             <input type="text" name="doc_eliminar" value="<?php echo $fila['id_tarea']; ?>" hidden>
                             <input type="text" name="fecha" value="<?php echo date('Y-m-d'); ?>" hidden>
-<<<<<<< HEAD
-=======
-
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
                             <button type="submit" name="btn_eliminar" style="background-color: rgba(0, 0, 0, 0.0); border: 0px;">
                                 <i class="fa-solid fa-trash" style="color: #5783bc; margin-left: 1rem;"></i>
                             </button>
                         </form>
-<<<<<<< HEAD
                     </td>
                 </tr>
 
@@ -227,28 +172,16 @@ if ($fila['estado'] == 0) {
                                 <i class="fa-solid fa-trash" style="color: #5783bc; margin-left: 1rem;"></i>
                             </button>
                         </form>
-=======
-
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
                     </td>
                 </tr>
 
 <?php
     }
-<<<<<<< HEAD
 }
 ?>
             </tbody>
         </table>
 </div>
-=======
-  }
-}
-  ?>
- 
-            </tbody>
-        </table>
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
 
 <?php
 if (isset($_POST['btn_modificar'])){
@@ -300,14 +233,8 @@ while($fila2=mysqli_fetch_array($consulta)){
 </form>
                          
 <?php
-<<<<<<< HEAD
         }
     }
 }
 ?>
 
-=======
-}
-}
-?>
->>>>>>> feb1da2a4955cc5198b95b1813ca1706d82d06a0
