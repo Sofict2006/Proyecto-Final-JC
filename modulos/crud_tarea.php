@@ -64,7 +64,7 @@ echo "<script>alert('Modificación Exitosa');</script>";
         </center>
 
     <div class="table-container">
-        
+
         <!-- Tabla de Tareas Completadas -->
         <table class="table">
             <thead>
