@@ -29,7 +29,7 @@ nav {
     align-items: center;
     justify-content: space-around;
     min-height: 8vh;
-    background-color: #6a9cde;
+    background-color: #a0c5f7;
 }
 
 .hola {
@@ -74,7 +74,7 @@ nav {
 }
 
 .enlaces_menu li:hover {
-    background-color: #5783bc;
+    background-color: #6a9cde;
 }
 
 ul {
@@ -107,7 +107,7 @@ ul {
     }
 
     .enlaces_menu{
-        background-color: #6a9cde;
+        background-color: #a0c5f7;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
@@ -155,8 +155,9 @@ ul {
     height: 100%;
     display: flex;
     max-width: 400px;
-    border: rgb(0, 0, 0) solid;
+    border: #a5c9f7 solid;
     border-radius: 20px;
+    background-color: #e8f0fb;
 
 }
 
@@ -222,7 +223,7 @@ label{
 }
 
 .sign-btn:hover{
-    background-color: #77aca2;
+    background-color: #6a9cde;
 }
 
 .text{
@@ -239,6 +240,9 @@ label{
     color: #8371fd;
 }
 
+.buscar {
+    display: block;
+}
 
 @media (max-width: 850px) {
   
@@ -267,3 +271,24 @@ label{
       padding: 1rem 2rem 1.5rem;
     }
   }
+
+
+/* Estilos de las tablas */
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-container table {
+    width: 48%; /* Ajusta según sea necesario */
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table-container th, .table-container td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}

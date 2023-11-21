@@ -9,7 +9,7 @@ if(!isset($_SESSION['correo'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard1.css">
 
     <link rel="icon" type="image/png" href="img/favicon.png" />
 
@@ -30,7 +30,7 @@ if(!isset($_SESSION['correo'])){
                 <li><a href="dashboard.php?mod=crud_tarea">Inicio</a></li>
                 <li><a href="dashboard.php?mod=crud_tarea">Gestionar Tareas</a></li>
                 <li><a href="dashboard.php?mod=gestion_tareas">Crear Tareas</a></li>
-                <li><a href="dashboard.php?mod=inicio">Contacto</a></li>
+                <li><a href="dashboard.php?mod=inicio">Perfil</a></li>
             </ul>
 
             <button class="hola" type="button">

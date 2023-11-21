@@ -5,8 +5,11 @@
     <title>Gestión de Tareas</title>
     <link rel="icon" type="image/jpg" href="../img/favicon.png" />
 
+    
 </head>
 <body>
+
+<br>
 
 <div class="card">
 <form action="logica_tareas.php" method="post" autocomplete="off">
@@ -16,6 +19,8 @@
         <h2>Crea una tarea</h2>
     </center>
 </div>
+
+<br>
 
 <div class="actual-form">
 

@@ -45,12 +45,14 @@ echo "<script>alert('Modificación Exitosa');</script>";
 ?>
 
 <br>
+<br>
 
-<form action="dashboard.php?mod=crud_tarea" method="post">
 
-    <input type="text" class="form-control" placeholder="Buscar..." name="txtbuscar" style="width: 50%;">
+<form action="dashboard.php?mod=crud_tarea" method="post" class="buscar">
 
-    <button type="submit" class="btn" name="btn_registrar1" style="border-radius: 10px; width: 150px; margin-top: 8px;">Buscar</button>
+    <input type="text" class="form-control" placeholder="Buscar..." name="txtbuscar" style="width: 80%; height:40px;">
+
+    <button type="submit" class="sign-btn" name="btn_registrar1" style="border-radius: 10px; width: 50px; margin-top: 8px; margin-left: -15px; height:40px;">Buscar</button>
 
 </form>
 
@@ -61,6 +63,8 @@ echo "<script>alert('Modificación Exitosa');</script>";
             <p class="card-description"> ¡Hola, <?php echo $_SESSION['nombres'];?>! Aquí puedes gestionar las tareas.</p> 
         </center>
 
+    <div class="table-container">
+        
         <!-- Tabla de Tareas Completadas -->
         <table class="table">
             <thead>
@@ -177,7 +181,7 @@ if ($fila['estado'] == 0) {
 ?>
             </tbody>
         </table>
-
+</div>
 
 <?php
 if (isset($_POST['btn_modificar'])){
